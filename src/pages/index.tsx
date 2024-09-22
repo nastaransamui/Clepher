@@ -34,6 +34,7 @@ export default function Home() {
     <Fragment>
       <Head>
         <title>Digital & Crypto Currencies</title>
+        <meta name="description" content="This is a concise summary of your web page content, ideally between 150-160 characters." />
       </Head>
       <Header />
       <Main />
@@ -67,3 +68,5 @@ export const getServerSideProps = (async () => {
     props: {}
   }
 });
+
+export const dynamic = 'force-static';

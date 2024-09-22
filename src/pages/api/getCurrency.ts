@@ -22,6 +22,8 @@ export default function handler(
         .includes(query.toLowerCase());
     }
   });
+  //Improve bfcatche
+  res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
   //Return filtered array for autoComplete
   res.status(200).json(filtered);
 }
