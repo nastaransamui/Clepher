@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 
 import { fileURLToPath } from "url";
-import downloadAndConvertToJSON from "@/utils/downloadAndConvertToJSON";
+// import downloadAndConvertToJSON from "@/utils/downloadAndConvertToJSON";
 import Head from "next/head";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -45,8 +45,8 @@ export default function Home() {
 export const getServerSideProps = (async () => {
 
   //Check if physical currency file is available if not download
-  const physicalListUrl = process.env.physicalListUrl!;
-  const digitalListUrl = process.env.digitalListUrl!;
+  // const physicalListUrl = process.env.physicalListUrl!;
+  // const digitalListUrl = process.env.digitalListUrl!;
   const publicFolder = path.join(__dirname, "../../public");
   // Destination file path for JSON
   const physicalCurrency = `${publicFolder}/physicalCurrency.json`;
@@ -55,11 +55,11 @@ export const getServerSideProps = (async () => {
 
   // Call the function to download and convert the CSV
   if (!fs.existsSync(physicalCurrency)) {
-    downloadAndConvertToJSON(physicalListUrl, physicalCurrency);
+    // downloadAndConvertToJSON(physicalListUrl, physicalCurrency);
   }
 
   if (!fs.existsSync(digitalCurrency)) {
-    downloadAndConvertToJSON(digitalListUrl, digitalCurrency);
+    // downloadAndConvertToJSON(digitalListUrl, digitalCurrency);
   }
 
 
